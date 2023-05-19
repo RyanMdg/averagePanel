@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Average</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/dist/animate.css" />
+  </head>
+
+  <body class="dark " style="font-family: 'Roboto', sans-serif">
+    <section class="">
+      <div class="flex justify-between me-44">
+      <h1
+        class="text-white uppercase font-bold darks text-2xl ms-44 mt-5"
+        id="namePlace"
+      ></h1>
+      
+      <p class="text-white uppercase  font-bold darks text-2xl ms-40 mt-5" id="snPlace"></p>
+      <button
+        href=""
+        onclick="logout()"
+        class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-28 bg-transparent border-rose-800 border-2 rounded-md hover:-translate-y-1 transition duration-500 darks"
+      >
+        Logout
+      </button>
+    </div>
+      <div class="flex justify-between gap-5 max-w-6xl mx-auto">
+        <h1 class="uppercase text-xl ms-10 mt-10 font-bold darks text-white">
+          Your Subjects
+        </h1>
+        <button
+          onclick="addSubjectbtn()"
+          class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-10 bg-transparent border-white border-2 rounded-md hover:-translate-y-1 addbtn transition duration-500 darks outline"
+        >
+        +
+        </button>
+        <button
+        onclick="removeSubjectbtn()"
+        class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-10 bg-transparent border-white border-2 rounded-md hover:-translate-y-1 transition duration-500 darks outline"
+      >
+      -
+      </button>
+        <button
+          onclick="modalFunction()"
+          class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-48 bg-transparent border-white border-2 outline rounded-md hover:-translate-y-1 transition duration-500 darks"
+        >
+          View My Average
+        </button>
+        <ion-icon name="contrast-outline" id="darkMode" class="text-2xl lightbtn  relative top-11 cursor-pointer  "></ion-icon>
+        <button
+          href=""
+          onclick="getData()"
+          class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-48 bg-transparent border-rose-800 border-2 rounded-md hover:-translate-y-1 transition duration-500 darks"
+        >
+          Submit
+        </button>
+        <button
+          href=""
+          onclick="reset()"
+          class="uppercase text-sm ms-10 mt-10 font-light text-white flex justify-center p-1 items-center w-28 bg-transparent border-rose-800 border-2 rounded-md hover:-translate-y-1 transition duration-500 darks"
+        >
+          Reset
+        </button>
+        
+      </div>
+
+      <!-- SUBJECTS -->
+      <div class="grid grid-cols-4  max-w-6xl mx-auto gap-4 mt-10" id="post">
+        <!-- 1 -->
+        <div
+          class="bg-[#212226]  cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 transition duration-500 remover shadow-lg   hover:bg-[#3A3A40] rounded-md relative"
+        > 
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">Algebra 1</h4> 
+          <span class="text-sm text-[rgb(162,181,192)] darks">Sir Mark Santos</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-sky-500">.</span>Math
+            </p>
+            <img src="/assets/1.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-1"
+              type="text"
+              placeholder="Please Enter Your Grade value"
+              class="mt-5 p-1 text-start rounded-md inputgrade  bg-[#374151] text-sm outline-none reset"
+            />
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 transition duration-500 hover:bg-[#3A3A40] shadow-lg  rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl text-start darks">English II</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms Faith santos</span>
+          <div class="grid grid-cols-2 gap-5 ">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-purple-400">.</span>English
+            </p>
+            <img src="/assets/2.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-2"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 text-start rounded-md inputgrade  value bg-[#374151] text-sm outline-none reset"
+            />
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 transition duration-500 shadow-lg   hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">Physics I</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms Jellica</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-green-600">.</span>Science
+            </p>
+            <img src="/assets/3.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-3"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value inputgrade rounded-md bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 shadow-lg  transition duration-500 remover hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">World History</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms Estella</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-orange-400">.</span>History
+            </p>
+            <img src="/assets/4.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-4"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value inputgrade rounded-md bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 shadow-lg  transition duration-500 remover hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">Financial Literacy II</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms mia khalifa</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-slate-500">.</span>Electives
+            </p>
+            <img src="/assets/5.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-5"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value inputgrade rounded-md bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- 6-->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 shadow-lg  transition duration-500 remover hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">Filipino</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Sir Joy</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-amber-600">.</span>Filipino
+            </p>
+            <img src="/assets/6.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-6"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value inputgrade rounded-md bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 shadow-lg  transition duration-500 remover hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">Physical Education</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms devine lalabs</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-rose-950">.</span>Mapeh
+            </p>
+            <img src="/assets/7.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-7"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value rounded-md inputgrade bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div
+          class="bg-[#212226] cont-bg text-white flex flex-col flex-wrap p-5 gap-1 hover:-translate-y-2 shadow-lg  transition duration-500 remover hover:bg-[#3A3A40] rounded-md"
+        >
+        <ion-icon onClick="deletePost(this)" name="trash" class="relative left-52  text-4xl text-rose-700 cursor-pointer trash-hide trash "></ion-icon>
+          <h4 class="text-2xl darks">algebra 2</h4>
+          <span class="text-sm text-[rgb(162,181,192)] darks">Ms Ann lii</span>
+          <div class="grid grid-cols-2 gap-5">
+            <p class="text-xs uppercase mt-14 me-10 darks">
+              <span class="text-6xl text-sky-500">.</span>Math
+            </p>
+            <img src="/assets/8.jpg" class="rounded-lg mt-10" alt="" />
+          </div>
+
+          <!--grade section -->
+          <div class="grid grid-cols-1 gap-4">
+            <input
+              id="data-8"
+              type="text"
+              placeholder="Please Enter Your Grade"
+              class="mt-5 p-1 reset text-start value rounded-md  inputgrade bg-[#374151] text-sm outline-none"
+            />
+          </div>
+        </div>
+
+
+
+        <!-- SUBJECT ADD -->
+        
+      </div>
+    </section>
+    
+    <div
+      class="relative z-10 hidden animate"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+      id="hidden"
+    >
+      
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+      ></div>
+  
+<div class=" overflow-x-auto shadow-md sm:rounded-lg fixed inset-0 z-10 overflow-y-auto">
+  <div
+  class="flex min-h-full items-end max-w-2xl mx-auto justify-center p-4 text-center sm:items-center sm:p-0"
+>
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="px-6 py-3">
+                  Subject
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  grade
+              </th>
+              <th scope="col" class="px-6 py-3">
+                  Remarks
+              </th>
+              
+              
+          </tr>
+      </thead>
+      <tbody id="post-table">
+          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Algebra
+              </th>
+              <td class="px-6 py-4 reset-2 data" id="data-1-rec" >
+                  -
+              </td>
+              <td class="px-6 py-4 reset-2 remarks" >
+                  -
+              </td>
+              
+             
+          </tr>
+          <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  English ll
+              </th>
+              <td class="px-6 py-4 reset-2 data" id="data-2-rec">
+                  -
+              </td>
+              <td class="px-6 py-4 reset-2 remarks" >
+                  -
+              </td>
+              
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  Physics l
+              </th>
+              <td class="px-6 py-4 reset-2 data" id="data-3-rec">
+                  -
+              </td>
+              <td class="px-6 py-4 reset-2 remarks" >
+                  -
+              </td>
+          </tr>
+          <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  World History
+              </th>
+              <td class="px-6 py-4 reset-2 data" id="data-4-rec">
+                  -
+              </td>
+              <td class="px-6 py-4 reset-2 remarks" >
+                 -
+              </td>
+              
+              
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                 Financial Literacy
+              </th>
+              <td class="px-6 py-4 reset-2 data" id="data-5-rec">
+                  -
+              </td>
+              <td class="px-6 py-4 reset-2 remarks" >
+                 -
+              </td>
+              
+          </tr>
+          <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                Filipino
+            </th>
+            <td class="px-6 py-4 reset-2 data" id="data-6-rec">
+                -
+            </td>
+            <td class="px-6 py-4 reset-2 remarks" >
+                -
+            </td>
+            
+        </tr>
+        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+             Physical Education
+          </th>
+          <td class="px-6 py-4 reset-2 data" id="data-7-rec">
+              -
+          </td>
+          <td class="px-6 py-4 reset-2 remarks" >
+             -
+          </td>
+          
+          
+      </tr>
+      <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            Algebra 2
+        </th>
+        <td class="px-6 py-4 reset-2 data" id="data-8-rec">
+            -
+        </td>
+        <td class="px-6 py-4 reset-2 remarks" >
+            -
+        </td>
+        
+    </tr>
+    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white uppercase text-3xl ">
+        GWA
+      </th>
+      <td class="px-6 py-4 reset-2 text-2xl" id="result">
+          -
+      </td>
+      <td class="px-6 py-4 reset-2 text-2xl uppercase" id="passOrfail">
+         -
+      </td>
+      
+  </tr>
+  <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <td>
+      <button
+      onclick="closeModal();"
+      type="button"
+      class="mt-3 inline-flex w-full justify-center rounded-md bg-slate-500 px-3 py-2 text-sm font-semibold text-gray-900 ms-10 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+    >
+      close
+    </button>
+</td>
+<td> </td>
+<td class="p-5"><button
+  onclick="getAverage();"
+  type="button"
+  class="inline-flex w-full justify-center rounded-md bg-slate-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+>
+  Get Average
+</button></td>
+</tr>
+      </tbody>
+  </table>
+  </div>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <!-- * sign up form -->
+
+    <div
+      class="relative  loginModal z-10  animate"
+      aria-modal="true"
+    >
+      
+      <div
+        class="fixed inset-0 bg-[#1A1B1F] transition-opacity"
+      ></div>
+
+      <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div
+          class="flex  items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          
+          <div
+            class="relative transform overflow-hidden text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+          >
+            <section class="bg-[#1A1B1F]">
+              <div
+                class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+              >
+                <a
+                  href="#"
+                  class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+                >
+                  Student Signup
+                </a>
+                <div
+                  class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#212226] dark:border-[#212226]"
+                >
+                  <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <h1
+                      class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                    >
+                      Student account
+                    </h1>
+                    <form class="space-y-4 md:space-y-6" action="#" onsubmit="signUp()">
+                      <div>
+                        <label
+                          for="email"
+                          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >Full Name</label
+                        >
+                        <input
+                          type="text"
+                         
+                          id="semail"
+                          class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                          placeholder="Fullname"
+                          required=""
+                        />
+                        <label
+                          for="number"
+                          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >Student Number</label
+                        >
+                        <input
+                          type="number"
+                         
+                          id="studentNumber"
+                          class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                          placeholder="Student Number"
+                          required=""
+                        />
+                        <label
+                          for="password"
+                          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                         
+                          id="spassword"
+                          class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                          placeholder="Email"
+                          required=""
+                        />
+                      </div>
+
+                      <div class="flex items-start"></div>
+                      
+                        <button
+                         
+                          type="submit"
+                          class="w-full text-white bg-sky-500 rounded-md py-2"
+                        >
+                          Signup
+                        </button>
+                      
+                      <p
+                        class="text-sm font-light text-gray-500 dark:text-gray-400"
+                      >
+                        Not enrolled?
+                        <a
+                          href="login.html"
+                          class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                          >Enroll here</a
+                        >
+                      </p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              
+            </section>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--* login form -->
+
+    <div
+    class="relative   login loginhidden loginModal loginClose    z-10  animate"
+    aria-modal="true"
+  >
+    
+    <div
+      class="fixed inset-0 bg-[#1A1B1F] transition-opacity"
+    ></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div
+        class="flex  items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      >
+        
+        <div
+          class="relative transform overflow-hidden text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+        >
+        
+          <section class="bg-[#1A1B1F]">
+            
+            <div
+              class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+            >
+            <p class="text-center invalid hide invahide mb-10 text-white bg-rose-600 p-5">Invalid username or password!</p>
+              <a
+                href="#"
+                class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+              >
+                Student login
+              </a>
+              <div
+                class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#212226] dark:border-[#212226]"
+              >
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                  <h1
+                    class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
+                  >
+                    Student account
+                  </h1>
+                  <form class="space-y-4 md:space-y-6" action="#" onsubmit="login()">
+                    <div>
+                      
+                      <label
+                        for="number"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Student Number</label
+                      >
+                      <input
+                        type="number"
+                       
+                        id="lnumber"
+                        class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Student Number"
+                        required=""
+                      />
+                      <label
+                        for="password"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                       
+                        id="lpassword"
+                        class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        placeholder="Password"
+                        required=""
+                      />
+                    </div>
+
+                    <div class="flex items-start"></div>
+                    
+                      <button
+                       
+                        type="submit"
+                        class="w-full text-white bg-sky-500 rounded-md py-2"
+                      >
+                        login
+                      </button>
+                    
+                    <p
+                      class="text-sm font-light text-gray-500 dark:text-gray-400"
+                    >
+                      Not enrolled?
+                      <a
+                        href="login.html"
+                        class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        >Enroll here</a
+                      >
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </section>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+      <!-- add subject  modal -->
+      <div class="addsub try">
+        <form action="" id="form">
+    <div
+      
+    class="relative   z-10  animate"
+    
+    aria-modal="true"
+    
+  >
+    
+    <div
+      class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+    ></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+      <div
+        class="flex  items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      >
+        
+        <div
+          class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+        >
+          <section class="bg-[#1A1B1F]">
+            <div
+              class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
+            >
+              <a
+                href="#"
+                class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+              >
+                add subject
+              </a>
+              <div
+                class="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-[#212226] dark:border-[#212226]"
+              >
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                  
+                  <form class="space-y-4 md:space-y-6" action="#">
+                    <div>
+                      <label
+                        for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Teacher Name</label
+                      >
+                      <input
+                        type="text"
+                       
+                        id="TeacherName"
+                        class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150 mb-3"
+                        placeholder="Full Name"
+                        required=""
+                      />
+                      <span id="msg"></span>
+                      <label
+                        for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Lesson</label
+                      >
+                      <input
+                        type="text"
+                       
+                        id="lessonv"
+                        class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150 mb-3"
+                        placeholder="Current lesson or topic"
+                        required=""
+                      />
+                      <label
+                        for="email"
+                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >Subject</label
+                      >
+                      <input
+                        type="text"
+                       
+                        id="subjectv"
+                        class="appearance-none block  py-2 px-4 text-sm leading-5 text-gray-700 focus:outline-none focus:ring w-full ease-linear transition-all duration-150 mb-3"
+                        placeholder="Subject"
+                        required=""
+                      />
+                    </div>
+
+                    <div class="flex items-start"></div>
+                    
+                      <button
+                      type="submit"
+                        
+                        class="w-full text-white bg-sky-500 rounded-md py-2"
+                      >
+                        Add
+                      </button>
+                    </form>
+                    <p
+                      class="text-sm font-light text-gray-500 dark:text-gray-400"
+                    >
+                      Not enrolled?
+                      <a
+                        href="login.html"
+                        class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        >Enroll here</a
+                      >
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </section>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="/dist/main.js"></script>
+    <script src="remarks.js"></script>
+  </body>
+</html>

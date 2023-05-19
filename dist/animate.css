@@ -1,0 +1,97 @@
+@keyframes ease-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes invalid {
+  0% {
+    opacity: 0;
+    transform: translatey(100px);
+  }
+
+  80% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.invahide {
+  animation-duration: 0.6s;
+  animation-name: invalid;
+}
+
+.animate {
+  animation: ease-in 0.1s ease-in;
+}
+
+.hide {
+  display: none;
+}
+
+.hidemodalsub {
+  display: none;
+}
+
+.hidemodalsubclose {
+  display: none;
+}
+
+.hidebtn {
+  display: nosne;
+}
+
+.try {
+  display: none;
+}
+
+.dark {
+  background-color: #1a1b1f;
+}
+
+.darkss {
+  color: #1a1b1f;
+}
+
+.lighter {
+  background-color: #fff;
+  border: solid 1px #1a1b1f;
+}
+
+.light {
+  background-color: #fff;
+}
+
+.lightbtn {
+  color: #fff;
+}
+.darkbtn {
+  color: black;
+}
+
+.borders {
+  border: 1px solid black;
+}
+.trash-hide {
+  display: none;
+}
+.light-bg {
+  background-color: #fff;
+  border: solid 1px #1a1b1f;
+  color: black;
+}
+
+.loginhidden {
+  display: none;
+}
+.loginshow {
+  display: block;
+}
